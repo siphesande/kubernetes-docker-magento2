@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: magento2
+  labels:
+    app: magento2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: magento2
+  template:
+    metadata:
+      labels:
+        app: magento2
+    spec:
+      containers:
+        - image: alexcheng/magento2
+          name: magento2
+          env:
+          - name: MYSQL_HOST
+            value: mysql:3306
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql
+                key: password
+          ports:
+            - containerPort: 80
+              name: magento2
+      #     volumeMounts:
+      #       - name: magento2-persistent-storage
+      #         mountPath: /var/www/html
+      # volumes:
+      #   - name: magento2-persistent-storage
+      #     gcePersistentDisk:
+      #       pdName: magento2-disk
+      #       fsType: ext4
