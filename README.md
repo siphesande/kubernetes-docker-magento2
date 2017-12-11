@@ -1,11 +1,13 @@
 # kubernetes-docker-magento2
 Kubernetes Engine, Docker, Magento 2
 
-Gettying Satarted
-- Clone the repo..
+Getting Satarted
+```
+- Clone this repo..
+```
 Prerequisites:
 ```- Install Docker: https://www.docker.com  
-   - brew install docker
+   - $ brew install docker
    or this help you get started https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
 ```
 Start Magento 2 with Docker Compose
@@ -13,7 +15,7 @@ On your command line
 ```
 $ docker-compose up -d
 $ docker ps
-Now vist localhost:8000
+Now visit http://localhost:8000
 ```
 Start Magento 2 with Kubernetes
 
@@ -37,7 +39,7 @@ Magento 2 Ste up and deployment to Kubernetes
 ```
 $ kubectl create -f magento2.yaml
 ```
-To expose your Mageto2 application to traffic from the internet using a load balancer, you need a Service with type:LoadBalancer
+To expose your Magento2 application to traffic from the internet using a load balancer, you need a Service with type:LoadBalancer
 ```
 $ kubectl create -f magento2-service.yaml
 ```
@@ -51,11 +53,10 @@ From this, you can now access your application by visiting the External IP addre
 http://104..........:80/
 ```
 Cleaning up
-``` kubectl delete secret  mysql
-    kubectl delete deployment -l app=magento2
-    kubectl delete service -l app=magento2
-
-    gcloud compute disks delete mysql-disk magento-disk
+``` $ kubectl delete secret  mysql
+    $ kubectl delete deployment -l app=magento2
+    $ kubectl delete service -l app=magento2
+    $ gcloud compute disks delete mysql-disk magento-disk
 
     You can do this using kubernetes ui(Dashboard) and GCP
 ```
