@@ -46,3 +46,12 @@ From this, you can now access your application by visiting the External IP addre
 ```
 http://104..........:80/
 ```
+Cleaning up
+``` kubectl delete secret  mysql
+    kubectl delete deployment -l app=magento2
+    kubectl delete service -l app=magento2
+
+    gcloud compute disks delete mysql-disk magento-disk
+
+    You can do this using kubernetes ui(Dashboard) and GCP
+```
