@@ -3,13 +3,17 @@ Kubernetes Engine, Docker, Magento 2
 
 Gettying Satarted
 - Clone the repo..
-
+Prerequisites:
+```- Install Docker: https://www.docker.com  
+   - brew install docker
+   or this help you get started https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+```
 Start Magento 2 with Docker Compose
-
 On your command line
 ```
 $ docker-compose up -d
 $ docker ps
+Now vist localhost:8000
 ```
 Start Magento 2 with Kubernetes
 
@@ -54,4 +58,11 @@ Cleaning up
     gcloud compute disks delete mysql-disk magento-disk
 
     You can do this using kubernetes ui(Dashboard) and GCP
+```
+Usefull links:
+```
+- https://github.com/alexcheng1982/docker-magento2
+- https://scotch.io/tutorials/google-cloud-platform-i-deploy-a-docker-app-to-google-container-engine-with-kubernetes
+- https://cloud.google.com/kubernetes-engine/docs/tutorials/persistent-disk
+- https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
 ```
