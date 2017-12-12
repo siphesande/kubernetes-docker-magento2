@@ -19,7 +19,8 @@ $ docker ps
 Now visit http://localhost:8000
 ```
 Start Magento 2 with Kubernetes
-```(by now, you have installed kubectl and minikube, if not please check here:https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/)
+```
+By now, you have installed kubectl and minikube, if not please check      here:https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
 ```
 MySQL deployment to Kubernetes and Set up
 
