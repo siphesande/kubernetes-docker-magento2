@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: myphpadmin
+  labels:
+    app: myphpadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myphpadmin
+  template:
+    metadata:
+      labels:
+        app: myphpadmin
+    spec:
+      containers:
+        - image: phpmyadmin/phpmyadmin
+          name: myphpadmin
+          env:
+          - name: MYSQL_HOST
+            value: mysql:3306
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql
+                key: password
+          ports:
+            - containerPort: 8580
+              name: muphpadmin
