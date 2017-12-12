@@ -17,7 +17,7 @@ On your command line
 $ docker-compose up -d
 $ docker ps
 $ docker logs -f CONTAINER_ID
-Now visit http://localhost:8000
+To see your Magento visit http://localhost:8000
 ```
 Start Magento 2 with Kubernetes
 ```
