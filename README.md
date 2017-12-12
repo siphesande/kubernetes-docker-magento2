@@ -3,7 +3,7 @@ Kubernetes Engine, Docker, Magento 2
 
 Getting Satarted
 ```
-- Clone this repo..
+- Clone this ^ repository "aka" repo
 ```
 Prerequisites:
 ```- Install Docker: https://www.docker.com  
