@@ -32,7 +32,8 @@ Start Magento 2 with Kubernetes
                             - $ kubectl proxy
                             - You will get this: Starting to serve on 127.0.0.1:8001 (leave it open and work on the other terminal tap to avoid    terminating the process)
                             - Open the Dashboard interface > http://localhost:8001/ui
-
+  5.Create your persistent disks - $ gcloud compute disks create --size 200GB mysql-disk
+                                 - $ gcloud compute disks create --size 200GB magento2-disk
 ```                                                                
 MySQL deployment to Kubernetes and Set up
 
@@ -77,7 +78,7 @@ Cleaning up
 ``` $ kubectl delete secret  mysql
     $ kubectl delete deployment -l app=magento2
     $ kubectl delete service -l app=magento2
-    $ gcloud compute disks delete mysql-disk magento-disk
+    $ gcloud compute disks delete mysql-disk magento2-disk
 
     You can also do this by using kubernetes ui(Dashboard) and GCP ui
 ```
