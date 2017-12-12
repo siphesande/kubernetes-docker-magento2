@@ -6,8 +6,8 @@ Getting Satarted
 - Clone this ^ repository "aka" repo
 ```
 Prerequisites:
-```- Install Docker: https://www.docker.com  
-   - $ brew install docker
+```
+   - Download and install Docker($ brew install docker)
    - this will help you get started https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
 
 ```
@@ -30,7 +30,7 @@ Start Magento 2 with Kubernetes
 
   4. Connect to the cluster - $ gcloud container clusters get-credentials cluster_name --zone us-central1-a --project project_name
                             - $ kubectl proxy
-                            - Open the Dashboard interface > http://localhost/ui
+                            - Open the Dashboard interface > http://localhost:8001/ui
 
 ```                                                                
 MySQL deployment to Kubernetes and Set up
