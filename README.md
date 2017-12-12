@@ -8,7 +8,8 @@ Getting Satarted
 Prerequisites:
 ```- Install Docker: https://www.docker.com  
    - $ brew install docker
-   or this help you get started https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+   - this will help you get started https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+
 ```
 Start Magento 2 with Docker Compose
 On your command line
@@ -18,7 +19,8 @@ $ docker ps
 Now visit http://localhost:8000
 ```
 Start Magento 2 with Kubernetes
-
+```(by now, you have installed kubectl and minikube, if not please check here:https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/)
+```
 MySQL deployment to Kubernetes and Set up
 
 First step to deploy MySQL is to create a Kubernetes Secret to store the password for the database. To create a Secret named mysql, run the following command (and replace YOUR_PASSWORD with a passphrase of your choice):
@@ -50,7 +52,7 @@ $ kubectl get services
 
 From this, you can now access your application by visiting the External IP address on port 80
 ```
-http://104..........:80/
+http://104_________:80/
 ```
 Cleaning up
 ``` $ kubectl delete secret  mysql
