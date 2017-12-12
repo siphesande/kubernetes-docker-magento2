@@ -12,12 +12,12 @@ Prerequisites:
 
 ```
 Start Magento 2 with Docker Compose
-On your command line
+on your command line
 ```
 $ docker-compose up -d
 $ docker ps
 $ docker logs -f CONTAINER_ID
-To see your Magento visit http://localhost:8000
+To see your Magento page visit http://localhost:8000
 ```
 Start Magento 2 with Kubernetes
 ```
@@ -30,6 +30,7 @@ Start Magento 2 with Kubernetes
 
   4. Connect to the cluster - $ gcloud container clusters get-credentials cluster_name --zone us-central1-a --project project_name
                             - $ kubectl proxy
+                              (leave it open and work on the other terminal tap to avoid terminating the process)
                             - Open the Dashboard interface > http://localhost:8001/ui
 
 ```                                                                
