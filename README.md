@@ -16,12 +16,23 @@ On your command line
 ```
 $ docker-compose up -d
 $ docker ps
+$ docker logs -f CONTAINER_ID
 Now visit http://localhost:8000
 ```
 Start Magento 2 with Kubernetes
 ```
-By now, you have installed kubectl and minikube, if not please check      here:https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
-```
+- By now, you have installed kubectl and minikube, if not please check here:https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+- If you are using Google Cloud, make sure that you have done these:
+  1. Installed Google Cloud SDK
+  2. Created a Project
+  3. Created a cluster - $ gcloud container clusters create cluster_name
+                       - $ gcloud config set container/cluster cluster_name  
+
+  4. Connect to the cluster - $ gcloud container clusters get-credentials cluster_name --zone us-central1-a --project project_name
+                            - $ kubectl proxy
+                            - Open the Dashboard interface > http://localhost/ui
+
+```                                                                
 MySQL deployment to Kubernetes and Set up
 
 First step to deploy MySQL is to create a Kubernetes Secret to store the password for the database. To create a Secret named mysql, run the following command (and replace YOUR_PASSWORD with a passphrase of your choice):
@@ -38,7 +49,7 @@ The next step is to create a Service to expose the MySQL container and make it a
 $ kubectl create -f mysql-service.yaml
 ```
 
-Magento 2 Ste up and deployment to Kubernetes
+Magento 2 Set up and deployment to Kubernetes
 ```
 $ kubectl create -f magento2.yaml
 ```
@@ -61,10 +72,12 @@ Cleaning up
     $ kubectl delete service -l app=magento2
     $ gcloud compute disks delete mysql-disk magento-disk
 
-    You can do this using kubernetes ui(Dashboard) and GCP
+    You can also do this by using kubernetes ui(Dashboard) and GCP ui
 ```
 Usefull links:
 ```
+- https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/
+- https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 - https://github.com/alexcheng1982/docker-magento2
 - https://scotch.io/tutorials/google-cloud-platform-i-deploy-a-docker-app-to-google-container-engine-with-kubernetes
 - https://cloud.google.com/kubernetes-engine/docs/tutorials/persistent-disk

@@ -1,6 +1,6 @@
 FROM alexcheng/apache2-php7:7.1.11
 
-MAINTAINER Fu Cheng <alexcheng1982@gmail.com>
+
 
 RUN a2enmod rewrite
 
