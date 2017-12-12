@@ -78,9 +78,10 @@ Cleaning up
 ``` $ kubectl delete secret  mysql
     $ kubectl delete deployment -l app=magento2
     $ kubectl delete service -l app=magento2
+    (Do the same for mysql and phpmyadmin)
     $ gcloud compute disks delete mysql-disk magento2-disk
 
-    You can also do this by using kubernetes ui(Dashboard) and GCP ui
+    You can also delete using kubernetes ui(Dashboard) and GCP ui
 ```
 Usefull links:
 ```
