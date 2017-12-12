@@ -67,6 +67,12 @@ From this, you can now access your application by visiting the External IP addre
 ```
 http://104_________:80/
 ```
+phpMyAdmin Set up, deployment to kubernetes and expose
+```
+$ kubectl create -f phpmyadmin-deploy.yaml
+$ kubectl create -f phpmyadmin-service.yaml
+ Visit phpMyAdmin dashboard:http://35________:8580
+```
 Cleaning up
 ``` $ kubectl delete secret  mysql
     $ kubectl delete deployment -l app=magento2
