@@ -79,9 +79,15 @@ Cleaning up
     $ kubectl delete deployment -l app=magento2
     $ kubectl delete service -l app=magento2
     (Do the same for mysql and phpmyadmin)
-    $ gcloud compute disks delete mysql-disk magento2-disk
+    - You can also delete using kubernetes ui(Dashboard)
+    
+    If use Google cloud do this:
+     $ gcloud compute disks delete mysql-disk magento2-disk
+     Delete the cluster, which deletes the resources used by the cluster, including virtual machines, disks, and network resources.
+     $ gcloud container clusters delete cluster_name
+     Alternately, you can delete the project in its entirety. To do so using the gcloud tool, run:
+     $ gcloud projects delete ${PROJECT_ID}
 
-    You can also delete using kubernetes ui(Dashboard) and GCP ui
 ```
 Usefull links:
 ```
