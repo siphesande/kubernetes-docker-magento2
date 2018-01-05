@@ -1,3 +1,5 @@
+#Create your image from alexcheng/apache2-php7:7.1.11
+
 FROM alexcheng/apache2-php7:7.1.11
 
 
