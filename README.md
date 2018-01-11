@@ -1,6 +1,8 @@
 # kubernetes-docker-magento2
 Kubernetes Engine, Docker, Magento 2
 
+NOTE: THIS IS STILL WORK IN PROGRESS
+
 Getting Satarted
 ```
 - Clone this ^ repository "aka" repo
@@ -80,7 +82,7 @@ Cleaning up
     $ kubectl delete service -l app=magento2
     (Do the same for mysql and phpmyadmin)
     - You can also delete using kubernetes ui(Dashboard)
-    
+
     If use Google cloud do this:
      $ gcloud compute disks delete mysql-disk magento2-disk
      Delete the cluster, which deletes the resources used by the cluster, including virtual machines, disks, and network resources.
